@@ -1,0 +1,9 @@
+<div class="container justify-content-center mt-5" >
+    <div class="text-center">
+        <p *ngIf="loading">Loading....</p>
+        <p *ngIf="errorMessage">{{errorMessage}} Result not found!!!</p>
+        <button class="btn btn-primary " (click)="retrieveWithError()">Test for Error</button>
+    </div>  
+</div>
+
+<span class=" ml-3 btn btn-secondary" href="/PokemonList" routerLink="/PokemonList">Back</span>

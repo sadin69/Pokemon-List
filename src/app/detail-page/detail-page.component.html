@@ -1,0 +1,32 @@
+<p *ngIf="loading">Loading....</p>
+
+<div class="container">
+    <div *ngIf="Pokemonlist">
+        <div class="card" >
+            <div class="card-header">
+                <div class="card-body">
+                   <div class="row">
+                       <div class="col-lg-3  align-items-stretch" >
+                            <img [src] ="Pokemonlist[0].sprites.front_default" alt="pokomon">
+
+                            <h3> {{Pokemonlist[0].name}}</h3>
+                            <p>
+                                <b>Height:</b> {{Pokemonlist[0].height}}
+                            </p>
+                            <p>
+                                <b>Weight</b>: {{Pokemonlist[0].weight}}
+                            </p>
+                            <p>
+                            <b>Base Experience</b>: {{Pokemonlist[0].base_experience}}
+                            </p>
+                           
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+

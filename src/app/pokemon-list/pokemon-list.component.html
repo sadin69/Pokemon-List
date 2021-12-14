@@ -1,0 +1,33 @@
+
+<div class="container">
+   
+    <div  *ngIf="Pokemonlist">
+        <div class="card" *ngFor="let pokomon of Pokemonlist | paginate:  { itemsPerPage :10, currentPage: page, totalItems: totalPokomon } ">
+            <div class="card-header">
+                <div class="card-body">
+                   <div class="row">
+                       <div class="col-md-3 col-sm-4 col-lg-2">
+                            <img [src] ="pokomon.sprites.front_default" alt="pokomon">
+                            <h3> {{pokomon.name}}</h3>
+                            <!-- <p>
+                                <b>Height:</b> {{pokomon.height}}
+                            </p>
+                            <p>
+                                <b>Weight</b>: {{pokomon.weight}}
+                            </p>
+                            <p>
+                            <b>Base Experience</b>: {{pokomon.base_experience}}
+                            </p> -->
+                            <a href="/DetailPage/{{pokomon.name}}">Detail</a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<pagination-controls (pageChange) = "page = $event; Pokemonlist =[]; retrivePokemonLis()" ></pagination-controls>
+    <p **ngIf="!Pokemonlist">The Server Response failed</p>
+
+  
+</div>
